@@ -42,7 +42,7 @@ $(function(){
 		var offset = $('#container').offset();
 		// console.log(offset);
 		// console.log('insidecreateDropPinfunction');
-		var divEl = $('<div class="drop-pin"><img src="images/pickaxe.png"></div>');
+		var divEl = $('<div class="drop-pin"><img src="images/Gold-ingot.png"></div>');
 		divEl.css({top: y - offset.top - 15, left: x - offset.left - 15})
 		$('#container').append(divEl);
 	};
