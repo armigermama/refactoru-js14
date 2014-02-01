@@ -1,7 +1,7 @@
 $(function(){
 
 
-//Data/////////
+//	Data/////////
 
 	var getCoordinates = function (e) {
 		var evt = e ? e:window.event;
@@ -35,26 +35,44 @@ $(function(){
 	};
 
 
-//DOM manipulation/////////////////
+//	DOM manipulation/////////////////
 
 	//Rendering Drop Pin
 	var createDropPin = function(x,y) {
 		var offset = $('#container').offset();
-		// console.log(offset);
-		// console.log('insidecreateDropPinfunction');
+		console.log(offset);
+		console.log('insidecreateDropPinfunction');
 		var divEl = $('<div class="drop-pin"><img src="images/Gold-ingot.png"></div>');
-		divEl.css({top: y - offset.top - 15, left: x - offset.left - 15})
+		divEl.css({top: y - offset.top - 15, left: x - offset.left - 15});
 		$('#container').append(divEl);
+		if (confirm'Would you like to enter a note for this gold dig pin?')){
+			createDataForm();
+		}
 	};
 
-//Events//////////////////////////
+	//Rendering Note form When Drop Pin Confirm === true
+	var createDataForm = function(){
+		var blackOverlayEl = $('<div id="black-overlay"></div>');
+		var lightboxContentEl =	$('<div id="lightbox-content"></div>');
+		var textareaEl = $('<textarea cols="4" rows="50" data-pin-id="" placeholder="secrets about this gold dig goes here..."autofocus>');
+		var closeButtonEl= $('<div><a class="button close-lightbox">Close</a></div>');
+		$('#container').append(blackOverlayEl);
+		$('#black-overlay').append(lightboxContentEl);
+		$('#lightbox-content').append(textareaEl,closeButtonEl);
+	};
+	
+
+//	Form Processing////////////////////
+
+
+//	Events//////////////////////////
 	
 
 	//Click Event for Drop Pin
 	$('#map-img').click(function(e){
-		// console.log('insideclickfunction');
+		console.log('insideclickfunction');
 		coord = getCoordinates(e);
-		// console.log(coord);
+		console.log(coord);
 		createDropPin(coord.x, coord.y);
 	});
 

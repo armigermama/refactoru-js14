@@ -33,3 +33,43 @@ body {
 	position: absolute;
 	margin-left: 2px;
 }
+
+/* LightBox Styling
+*/
+
+.black-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .8);
+	z-index: 1001; 
+}
+
+.lightbox-content {
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 30%;
+	padding: 16px;
+	background-color: #FFF;
+	border-radius: 5px;
+	z-index: 1002; 
+
+}
+
+.button {
+	padding: 10px 50px;
+	color: #FFF;
+	background-color: #F67584;
+	border-radius: 5px;
+}
+
+.close-lightbox {
+	float: left;
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
